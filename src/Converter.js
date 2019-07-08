@@ -22,9 +22,7 @@ class Converter extends Component {
     // update the key in formData copy with the new value
     formDataCopy[inputName] = userInput;
     // set the state with the updated formData
-    this.setState({
-      formData: formDataCopy
-    });
+    this.setState({ formData: formDataCopy });
   };
 
   handleSubmit = event => {
@@ -57,7 +55,7 @@ class Converter extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label> Amount </label>
-          <input type="number" name="amount" min="0" pattern="^[0-9]*$"
+          <input type= "number" name= "amount" min= "0" pattern= "[0-9]"
             value={this.state.formData.amount}
             onChange={this.handleChange}
           />
