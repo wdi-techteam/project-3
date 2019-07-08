@@ -38,8 +38,8 @@ class Converter extends Component {
     const to = this.state.formData.to;
     console.log(from);
     console.log(to);
-    axios({
-      method: "get",
+    
+    axios({ method: "get",
       url: `https://free.currconv.com/api/v7/convert?q=${from}_${to}&compact=ultra&apiKey=c88d0484f970be819447`
      
     })
