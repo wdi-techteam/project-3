@@ -46,9 +46,12 @@ class Converter extends Component {
         const result = response.data[rate] * amount; //get the result
         console.log(result);
       })
-      .catch(error => {
-        console.log("Request failed");
-      });
+      .catch((error) =>{
+       
+        console.log('Request failed');
+
+            
+    })
   };
 
   render() {
