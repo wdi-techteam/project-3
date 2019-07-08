@@ -7,7 +7,7 @@ class Converter extends Component {
       //to get user input
       from: "",
       to: "",
-      amount: 0
+      amount: ""
     }
   };
 
@@ -56,13 +56,12 @@ class Converter extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label>Amount </label>
-          <input
-            name="amount"
+          <label> Amount </label>
+          <input type="number" name="amount" min="0" pattern="^[0-9]*$"
             value={this.state.formData.amount}
             onChange={this.handleChange}
           />
-          <label>From </label>
+          <label> From </label>
           <select onChange={this.handleChange} name="from">
             <option value="">Please Choose</option>
 
@@ -72,7 +71,7 @@ class Converter extends Component {
               </option>
             ))}
           </select>
-          <label>To </label>
+          <label> To </label>
           <select onChange={this.handleChange} name="to">
             <option value="">Please Choose</option>
             {this.props.currencies.map(currency => (
@@ -81,7 +80,7 @@ class Converter extends Component {
               </option>
             ))}
           </select>
-          <button type="submit">ok</button>
+          <button type="submit"> Convert </button>
         </form>
       </div>
     );
