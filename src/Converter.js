@@ -7,7 +7,7 @@ class Converter extends Component {
       //to get user input
       from: "",
       to: "",
-      amount: ""
+      amount: 0
     }
   };
 
@@ -35,9 +35,10 @@ class Converter extends Component {
     console.log(to);
     axios({
       method: "get",
-      url: `https://free.currconv.com/api/v7/convert?q=${from}_${to}&compact=ultra&apiKey=de16d9c21e2609ca2315`
-      // "https://free.currconv.com/api/v7/convert?q=USD_PHP&compact=ultra&apiKey=de16d9c21e2609ca2315"
-      // 'https://free.currconv.com/api/v7/currencies?apiKey=80017b5a4cbbbc532a33'
+      url: `https://free.currconv.com/api/v7/convert?q=${from}_${to}&compact=ultra&apiKey=c88d0484f970be819447`
+      // amany's key= de16d9c21e2609ca2315
+      // wijdan's key= 80017b5a4cbbbc532a33
+      // maha's key= c88d0484f970be819447
     })
       .then(response => {
         const rate = `${from}_${to}`; //get the rate from api
@@ -55,7 +56,11 @@ class Converter extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label> Amount </label>
-          <input type= "number" name= "amount" min= "0" pattern= "[0-9]"
+          <input
+            type="number"
+            name="amount"
+            min="0"
+            pattern="[0-9]"
             value={this.state.formData.amount}
             onChange={this.handleChange}
           />
@@ -64,8 +69,8 @@ class Converter extends Component {
             <option value="">Please Choose</option>
 
             {this.props.currencies.map(currency => (
-              <option key={currency} value={currency}>
-                {currency}
+              <option key={currency.id} value={currency.id}>
+                {currency.id} - {currency.currencyName}
               </option>
             ))}
           </select>
@@ -73,8 +78,8 @@ class Converter extends Component {
           <select onChange={this.handleChange} name="to">
             <option value="">Please Choose</option>
             {this.props.currencies.map(currency => (
-              <option key={currency} value={currency}>
-                {currency}
+              <option key={currency.id} value={currency.id}>
+                {currency.id} - {currency.currencyName}
               </option>
             ))}
           </select>
