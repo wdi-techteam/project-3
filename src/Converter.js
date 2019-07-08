@@ -11,8 +11,8 @@ class Converter extends Component {
       to: "",
       amount: 0,
       result: 0,
-      toResult: false,
-      rate: 0
+      rate: 0,
+      toResult: false
     }
   };
 
