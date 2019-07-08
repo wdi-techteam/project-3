@@ -43,7 +43,6 @@ class Converter extends Component {
       url: `https://free.currconv.com/api/v7/convert?q=${from}_${to}&compact=ultra&apiKey=c88d0484f970be819447`
      
     })
-<<<<<<< HEAD
     getResult(from, to)
     .then(response => {
       const rate = `${from}_${to}`; //get the rate from api
@@ -67,15 +66,6 @@ class Converter extends Component {
 
             
     })
-=======
-      .then(response => {
-        const rate = `${from}_${to}`; //get the rate from api
-        const amount = this.state.formData.amount;
-        const result = response.data[rate] * amount; //get the result
-        console.log(result);
-    })
-      .catch(error => { console.log("Request failed");});
->>>>>>> add footer,about us,support
   };
 
   render() {
