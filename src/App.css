@@ -1,3 +1,1 @@
-input[type=text]:focus {
-    border: 3px solid #555;
-  }
+input[type=text]:focus { border: 3px solid #555; }

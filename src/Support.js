@@ -8,11 +8,11 @@ const Support = () => (
     
     <ul className= "us">
 
-    <li>Mr. Taha: taha.sindi@gmail.com </li>
-    <li>Ms. Wijdan: Wijdan.w.k@outlook.sa </li>
-    <li>Ms. Amany: amanyalattass@gmail.com </li>
-    <li>Ms. Maha: maha.ahmad.karban@gmail.com </li>
+        <li>Mr. Taha: taha.sindi@gmail.com </li>
+        <li>Ms. Wijdan: Wijdan.w.k@outlook.sa </li>
+        <li>Ms. Amany: amanyalattass@gmail.com </li>
+        <li>Ms. Maha: maha.ahmad.karban@gmail.com </li>
     
-</ul> </div>)
+    </ul> </div>)
 
 export default Support;
