@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Result from "./Result";
+import { getResult } from "./api";
 
 class Converter extends Component {
   state = {
@@ -7,7 +9,10 @@ class Converter extends Component {
       //to get user input
       from: "",
       to: "",
-      amount: 0
+      amount: 0,
+      result: 0,
+      toResult: false,
+      rate: 0
     }
   };
 
@@ -36,19 +41,31 @@ class Converter extends Component {
     axios({
       method: "get",
       url: `https://free.currconv.com/api/v7/convert?q=${from}_${to}&compact=ultra&apiKey=c88d0484f970be819447`
-      // amany's key= de16d9c21e2609ca2315
-      // wijdan's key= 80017b5a4cbbbc532a33
-      // maha's key= c88d0484f970be819447
+     
     })
-      .then(response => {
-        const rate = `${from}_${to}`; //get the rate from api
-        const amount = this.state.formData.amount;
-        const result = response.data[rate] * amount; //get the result
-        console.log(result);
-      })
-      .catch(error => {
-        console.log("Request failed");
+    getResult(from, to)
+    .then(response => {
+      const rate = `${from}_${to}`; //get the rate from api
+      this.setState({
+        formData: {
+          from: this.state.formData.from,
+          to: this.state.formData.to,
+          amount: this.state.formData.amount,
+          rate: `${from}_${to}`,
+          result: response.data[rate] * this.state.formData.amount,
+          toResult: true
+        }
       });
+      //const result = response.data[rate] * amount; //get the result
+      // <Result output={result}/>
+      console.log(this.state.result);
+    })
+      .catch((error) =>{
+       
+        console.log('Request failed');
+
+            
+    })
   };
 
   render() {
@@ -85,6 +102,14 @@ class Converter extends Component {
           </select>
           <button type="submit"> Convert </button>
         </form>
+        {this.state.formData.toResult ? (
+          <Result
+            output={this.state.formData.result}
+            amount={this.state.formData.amount}
+            from={this.state.formData.from}
+            to={this.state.formData.to}
+            toResult={this.state.toResult}
+          />) : ''}
       </div>
     );
   }

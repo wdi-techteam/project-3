@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Converter from "./Converter";
 import axios from "axios";
 import "./App.css";
+// import { Route } from "react-router-dom";
+
 
 class App extends Component {
   state = {
@@ -50,10 +52,15 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Hello</h1>
-        <Converter currencies={this.state.currencies} />
-      </div>
+      <React.Fragment>
+            
+              <div>
+                <h1>Hello</h1>
+
+                <Converter currencies={this.state.currencies} />
+              </div>
+       
+      </React.Fragment>
     );
   }
 }
