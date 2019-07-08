@@ -7,7 +7,7 @@ import "./Converter.css";
 class Converter extends Component {
   state = {
     formData: {
-      //to get user input
+      //to get user input from form
       from: "",
       to: "",
       amount: 0,
