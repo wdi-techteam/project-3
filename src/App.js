@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Converter from "./Converter";
 import axios from "axios";
 import "./App.css";
-import Footer from './footer'
+import Footer from "./footer";
 // import { Route } from "react-router-dom";
 
 class App extends Component {
@@ -52,15 +52,12 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-            
-              <div>
-               <h1></h1>
+        <div>
+          <h1 />
 
-                <Converter currencies={this.state.currencies} />
-                <Footer/>
-                
-              </div>
-       
+          <Converter currencies={this.state.currencies} />
+          <Footer />
+        </div>
       </React.Fragment>
     );
   }
