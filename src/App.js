@@ -6,6 +6,7 @@ import Footer from "./footer";
 import NavBar from "./NavBar";
 import About from "./About";
 import Support from "./Support";
+import Currencies from "./Currencies";
 import "./NavBar.css";
 import { Route } from "react-router-dom";
 
@@ -62,9 +63,13 @@ class App extends Component {
           path="/"
           render={() => <Converter currencies={this.state.currencies} />}
         />
+        <Route
+          exact
+          path="/currencies"
+          render={() => <Currencies currencies={this.state.currencies} />}
+        />
         <Route exact path="/about" component={About} />
         <Route exact path="/support" component={Support} />
-        <Route exact path="/currencies" component={Support} />
         <Route path="/" component={Footer} />
       </div>
     );
