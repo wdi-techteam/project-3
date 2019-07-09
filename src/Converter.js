@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import Result from "./Result";
 import { getResult } from "./api";
+import './Converter.css'
 
 
 class Converter extends Component {
