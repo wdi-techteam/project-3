@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import Result from "./Result";
 import { getResult } from "./api";
+import './Converter.css'
+
 
 class Converter extends Component {
   state = {
@@ -67,7 +69,7 @@ class Converter extends Component {
 
   render() {
     return (
-      <div>
+      <div className='currancyForm'>
         <form onSubmit={this.handleSubmit}>
           <label> Amount </label>
           <input
@@ -79,8 +81,8 @@ class Converter extends Component {
             onChange={this.handleChange}
           />
           <label> From </label>
-          <select onChange={this.handleChange} name="from">
-            <option value="">Please Choose</option>
+          <select className='select-items' onChange={this.handleChange} name="from">
+            <option  value="">Please Choose</option>
 
             {this.props.currencies.map(currency => (
               <option key={currency.id} value={currency.id}>
@@ -89,15 +91,15 @@ class Converter extends Component {
             ))}
           </select>
           <label> To </label>
-          <select onChange={this.handleChange} name="to">
+          <select className='select-items' onChange={this.handleChange} name="to">
             <option value="">Please Choose</option>
             {this.props.currencies.map(currency => (
               <option key={currency.id} value={currency.id}>
                 {currency.id} - {currency.currencyName}
               </option>
             ))}
-          </select>
-          <button type="submit"> Convert </button>
+          </select> 
+          <button className='submitButton' type="submit"> > </button>
         </form>
         {this.state.formData.toResult ? (
           <Result

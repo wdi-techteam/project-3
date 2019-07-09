@@ -1,5 +1,4 @@
-input[type=text]:focus { border: 3px solid #555; }
-
-body { text-align: center }
-
-footer {border-style: groove;}
+@import url('https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap');
+body{
+    font-family: 'DM Serif Text', serif;
+}
