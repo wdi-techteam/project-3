@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap');
-body{
-    font-family: 'DM Serif Text', serif;
+
+body{font-family: 'DM Serif Text', serif;}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
+
+span{color:red;}
