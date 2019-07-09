@@ -64,7 +64,7 @@ class Converter extends Component {
           from: from,
           to: to,
           amount: this.state.formData.amount,
-          rate: `${from}_${to}`,
+          rate: response.data[rate],
           result: response.data[rate] * this.state.formData.amount,
           toResult: true
         }
@@ -90,28 +90,28 @@ class Converter extends Component {
             value={this.state.formData.amount}
             onChange={this.handleChange}
           />
-          <label> From </label>
+          {/* <label> From </label> */}
           <select
             className="select-items"
             onChange={this.handleChange}
             name="from"
           >
-            <option value="">Please Choose</option>
+            <option value="">- Convert from -</option>
 
             {this.props.currencies.map(currency => (
-              <option name='from' key={currency.id} value={currency.id} selected>
+              <option name='from' key={currency.id} value={currency.id} >
                 {currency.id} - {currency.currencyName}
               </option>
             ))}
           </select> 
-           <button onClick={this.invertOption}> switch </button>
-          <label> To </label>
+           <button className="submitButton" id="invert"  onClick={this.invertOption}> {"<>"} </button>
+          {/* <label> To </label> */}
           <select
             className="select-items"
             onChange={this.handleChange}
             name="to"
           >
-            <option value="">Please Choose</option>
+            <option value="">- Convert to -</option>
             {this.props.currencies.map(currency => (
               <option name='to' key={currency.id} value={currency.id}>
                 {currency.id} - {currency.currencyName}
@@ -130,6 +130,7 @@ class Converter extends Component {
             from={this.state.formData.from}
             to={this.state.formData.to}
             toResult={this.state.toResult}
+            rate={this.state.formData.rate}
           />
         ) : (
           ""
