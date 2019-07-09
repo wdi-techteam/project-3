@@ -1,7 +1,25 @@
-input[type="number"] {
+form{
+  margin-top:15%; 
+  font-weight: bold;
+  color:white;
+  
+}
+#invert{
+  margin-left:15px;
+  margin-right:15px;  
+}
+.result{
+  margin-left:30%; 
+  margin-top:30px; 
+}
+#rate {
+  margin-left:33%; 
+  margin-top:30px; 
+}
+input[type="number"] { 
   width: 15%;
   padding: 20px 35px;
-  margin: 8px 0;
+  margin: 8px 7px;
   box-sizing: border-box;
   border-radius: 4px;
   border: 1px solid #555;
@@ -38,3 +56,4 @@ input[type="text"]:focus {
   border-radius: 8px;
   margin-left: 1%;
 }
+

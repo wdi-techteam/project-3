@@ -17,7 +17,7 @@ class App extends Component {
     axios({
       method: "get",
       url:
-        "https://free.currconv.com/api/v7/currencies?apiKey=c88d0484f970be819447"
+        "https://free.currconv.com/api/v7/currencies?apiKey=25b9fc364d1f0bdff9c3"
       // "https://free.currconv.com/api/v7/currencies?apiKey=de16d9c21e2609ca2315"
       //"https://free.currconv.com/api/v7/currencies?apiKey=80017b5a4cbbbc532a33"
     })

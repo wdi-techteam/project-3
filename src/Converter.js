@@ -6,6 +6,7 @@ import "./Converter.css";
 
 class Converter extends Component {
   state = {
+    invert:false,
     formData: {
       //to get user input
       from: "",
@@ -15,7 +16,7 @@ class Converter extends Component {
       result: 0,
       toResult: false
     }
-  };
+  }
 
   handleChange = event => {
     console.log("change");
@@ -29,42 +30,52 @@ class Converter extends Component {
     formDataCopy[inputName] = userInput;
     // set the state with the updated formData
     this.setState({ formData: formDataCopy });
-  };
+  }
 
   handleSubmit = event => {
     // prevent default action
     event.preventDefault();
-    // get the title
-    const from = this.state.formData.from;
-    const to = this.state.formData.to;
+    
+    let from = this.state.formData.from ;
+    let to = this.state.formData.to;
+    if(this.state.invert){
+      let temp="";
+      temp=from;
+      from=to;
+      to=temp;
+    
+
+    }
+    
     console.log(from);
     console.log(to);
 
     axios({
       method: "get",
       url: `https://free.currconv.com/api/v7/convert?q=${from}_${to}&compact=ultra&apiKey=c88d0484f970be819447`
-    });
+     
+    })
+
     getResult(from, to)
-      .then(response => {
-        const rate = `${from}_${to}`; //get the rate from api
-        this.setState({
-          formData: {
-            from: this.state.formData.from,
-            to: this.state.formData.to,
-            amount: this.state.formData.amount,
-            rate: `${from}_${to}`,
-            result: response.data[rate] * this.state.formData.amount,
-            toResult: true
-          }
-        });
-        //const result = response.data[rate] * amount; //get the result
-        // <Result output={result}/>
-        console.log(this.state.result);
-      })
-      .catch(error => {
-        console.log("Request failed");
+    .then(response => {
+      const rate = `${from}_${to}`; //get the rate from api
+      this.setState({
+        formData: {
+          from: from,
+          to: to,
+          amount: this.state.formData.amount,
+          rate: response.data[rate],
+          result: response.data[rate] * this.state.formData.amount,
+          toResult: true
+        }
       });
-  };
+    })
+  }
+  invertOption=()=>{
+    this.setState({
+      invert:true,
+    })
+  }
 
   render() {
     return (
@@ -79,29 +90,30 @@ class Converter extends Component {
             value={this.state.formData.amount}
             onChange={this.handleChange}
           />
-          <label> From </label>
+          {/* <label> From </label> */}
           <select
             className="select-items"
             onChange={this.handleChange}
             name="from"
           >
-            <option value="">Please Choose</option>
+            <option value="">- Convert from -</option>
 
             {this.props.currencies.map(currency => (
-              <option key={currency.id} value={currency.id}>
+              <option name='from' key={currency.id} value={currency.id} >
                 {currency.id} - {currency.currencyName}
               </option>
             ))}
-          </select>
-          <label> To </label>
+          </select> 
+           <button className="submitButton" id="invert"  onClick={this.invertOption}> {"<>"} </button>
+          {/* <label> To </label> */}
           <select
             className="select-items"
             onChange={this.handleChange}
             name="to"
           >
-            <option value="">Please Choose</option>
+            <option value="">- Convert to -</option>
             {this.props.currencies.map(currency => (
-              <option key={currency.id} value={currency.id}>
+              <option name='to' key={currency.id} value={currency.id}>
                 {currency.id} - {currency.currencyName}
               </option>
             ))}
@@ -118,6 +130,7 @@ class Converter extends Component {
             from={this.state.formData.from}
             to={this.state.formData.to}
             toResult={this.state.toResult}
+            rate={this.state.formData.rate}
           />
         ) : (
           ""

@@ -3,11 +3,11 @@
 }
 
 .Home {
-  background-color: lightsteelblue;
+  background-color: black;
 }
 a:link,
 a:visited {
-  background-color: lightsteelblue;
+  background-color: black;
   color: darkcyan;
   padding: 14px 25px;
   text-align: center;
@@ -24,6 +24,6 @@ a:active {
   text-align: right;
   margin-left: 55%;
   margin-right: 1%;
-  color: darkblue;
+  color: white;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }

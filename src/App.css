@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap');
 
-body{font-family: 'DM Serif Text', serif; background-size:cover; }
+body{
+    font-family: 'DM Serif Text', serif; 
+   /* background-color: black; */
+   background-image:url(texture.jpg);
+   /* background-size:cover;   */
+    
+
+ }
 
 footer{
     position: fixed;
@@ -8,6 +15,8 @@ footer{
     bottom: 0;
     width: 100%;
     text-align: center;
+    color:white;
 }
 
-span{color:red;}
+span{color:goldenrod;
+font-weight: bold;}
