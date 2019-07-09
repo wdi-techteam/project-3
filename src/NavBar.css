@@ -1,32 +1,29 @@
 .App {
-    font-family: sans-serif;
-  }
- 
-  
-  .Home{
-    background-color: lightsteelblue;
-    margin-bottom: 8%;
-  }
-  a:link, a:visited {
-    background-color:lightsteelblue;
-    color: darkcyan;
-    padding: 14px 25px;
-    text-align: center; 
-    text-decoration: none;
-    display: inline-block;
-  }
-  
-  a:hover, a:active {
-    background-color:lightblue;
-  }
-  .Cal{
-    font: 0.9em sans-serif;
-    text-align:right;
-    margin-left: 55%;
-    margin-right: 1%;
-    color: darkblue;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
-  
-  }
-  
-  
+  font-family: sans-serif;
+}
+
+.Home {
+  background-color: lightsteelblue;
+}
+a:link,
+a:visited {
+  background-color: lightsteelblue;
+  color: darkcyan;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover,
+a:active {
+  background-color: lightblue;
+}
+.Cal {
+  font: 0.9em sans-serif;
+  text-align: right;
+  margin-left: 55%;
+  margin-right: 1%;
+  color: darkblue;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}

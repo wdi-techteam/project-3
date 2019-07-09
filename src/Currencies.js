@@ -4,7 +4,7 @@ import "./Currencies.css";
 function Currencies(props) {
   return (
     <div className="currencies row">
-      <h2>List of all currencies</h2>
+      <h1>List of all currencies</h1>
       {props.currencies.map(currency => (
         <div key={currency.id} class="column">
           <div class="card">
