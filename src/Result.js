@@ -6,8 +6,7 @@ class Result extends Component {
     const showData = (
       <React.Fragment>
         <h2>
-          {this.props.amount} {this.props.from} = {this.props.output}{" "}
-          {this.props.to}
+          {this.props.amount} {this.props.from} = {this.props.output}{" "} {this.props.to}
         </h2>
       </React.Fragment>
     );
