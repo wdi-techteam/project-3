@@ -2,8 +2,14 @@ import React, { Component } from "react";
 import Converter from "./Converter";
 import axios from "axios";
 import "./App.css";
-import Footer from "./footer";
-// import { Route } from "react-router-dom";
+import Footer from './Footer';
+import NavBar from "./NavBar";
+import About from "./About";
+import Support from "./Support";
+import "./NavBar.css";
+import { Route } from "react-router-dom";
+
+
 
 class App extends Component {
   state = { currencies: [] };
@@ -50,17 +56,27 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <React.Fragment>
+    return (     
+      
         <div>
-          <h1 />
-
-          <Converter currencies={this.state.currencies} />
-          <Footer />
-        </div>
-      </React.Fragment>
+        
+        <Route path='/' component={NavBar} />
+        <Route exact path="/" render={() => 
+        <Converter currencies={this.state.currencies} /> }/>
+        <Route exact path='/about' component={About} />
+        <Route exact path='/support' component={Support} />
+        <Route exact path='/currencies' component={Support} />
+        <Route path='/' component={Footer} />
+        
+      </div>
     );
   }
 }
 
+<<<<<<< HEAD
 export default App;
+=======
+
+
+export default App;
+>>>>>>> save changes before update from taha
