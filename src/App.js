@@ -52,11 +52,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <div>
-<<<<<<< HEAD
           <h1>Currency Converter</h1>
-=======
-          <h1>Hello</h1>
->>>>>>> Doc Format
 
           <Converter currencies={this.state.currencies} />
         </div>
