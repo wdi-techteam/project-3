@@ -1,1 +1,5 @@
 input[type=text]:focus { border: 3px solid #555; }
+
+body { text-align: center }
+
+footer { border-block-color: 10%; }

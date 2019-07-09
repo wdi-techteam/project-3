@@ -4,13 +4,14 @@ import axios from "axios";
 import "./App.css";
 // import { Route } from "react-router-dom";
 
-
 class App extends Component {
   state = { currencies: [] };
 
   componentDidMount() {
-    axios({ method: "get",
-      url: "https://free.currconv.com/api/v7/currencies?apiKey=c88d0484f970be819447"
+    axios({
+      method: "get",
+      url:
+        "https://free.currconv.com/api/v7/currencies?apiKey=c88d0484f970be819447"
       // "https://free.currconv.com/api/v7/currencies?apiKey=de16d9c21e2609ca2315"
       //"https://free.currconv.com/api/v7/currencies?apiKey=80017b5a4cbbbc532a33"
     })
@@ -50,13 +51,11 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-            
-              <div>
-                <h1>Hello</h1>
+        <div>
+          <h1>Hello</h1>
 
-                <Converter currencies={this.state.currencies} />
-              </div>
-       
+          <Converter currencies={this.state.currencies} />
+        </div>
       </React.Fragment>
     );
   }
