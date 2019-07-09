@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Converter from "./Converter";
 import axios from "axios";
 import "./App.css";
-import Footer from "./Footer";
+import Footer from "./footer";
 import NavBar from "./NavBar";
 import About from "./About";
 import Support from "./Support";
