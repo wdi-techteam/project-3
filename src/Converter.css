@@ -1,5 +1,5 @@
 form{
-  margin-top:15%; 
+  margin-top:10%; 
   font-weight: bold;
   color:white;
   
@@ -7,14 +7,6 @@ form{
 #invert{
   margin-left:15px;
   margin-right:15px;  
-}
-.result{
-  margin-left:30%; 
-  margin-top:30px; 
-}
-#rate {
-  margin-left:33%; 
-  margin-top:30px; 
 }
 input[type="number"] { 
   width: 15%;
@@ -26,12 +18,12 @@ input[type="number"] {
   outline: none;
 }
 
-input[type="text"]:focus {
-  border: 3px solid #555;
-}
+
 
 .currancyForm {
   margin-left: 10%;
+  /* display: flex;
+  Justify-content: center; */
 }
 .select-items {
   width: 20%;

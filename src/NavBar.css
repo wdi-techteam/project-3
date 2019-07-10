@@ -1,14 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Abel|Notable|Russo+One&display=swap');
+
+.title{
+  color: aliceblue;
+  /* margin-top:0;  */
+  font-size: 30px;
+  margin-right: 30%;
+  margin-left:1.5% ;
+  text-shadow: 1px 1px goldenrod;
+  font-family: 'Abel', sans-serif;
+
+}
 .App {
   font-family: sans-serif;
 }
 
 .Home {
-  background-color: lightsteelblue;
+  background-color: #000;
+ 
 }
 nav a:link,
 nav a:visited {
-  background-color: lightsteelblue;
-  color: darkcyan;
+  background-color: #000;
+  color: aliceblue;
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
@@ -17,13 +30,13 @@ nav a:visited {
 
 nav a:hover,
 nav a:active {
-  background-color: lightblue;
+  background-color: rgb(60, 131, 155);
 }
 .Cal {
   font: 0.9em sans-serif;
   text-align: right;
-  margin-left: 55%;
+  margin-left: 5%;
   margin-right: 1%;
-  color: darkblue;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }

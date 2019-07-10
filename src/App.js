@@ -30,7 +30,7 @@ class App extends Component {
         }
         //Sorting code
         //Sort currencies By the currencyName
-        currancyData.sort(function(a, b) {
+        currancyData.sort(function (a, b) {
           var nameA = a.currencyName.toUpperCase(); // ignore upper and lowercase
           var nameB = b.currencyName.toUpperCase(); // ignore upper and lowercase
           if (nameA < nameB) {
@@ -57,7 +57,7 @@ class App extends Component {
   render() {
     return (
       <div id='parent'>
-        <NavBar/>
+        <NavBar />
         <Route
           exact
           path="/"
@@ -70,7 +70,7 @@ class App extends Component {
         />
         <Route exact path="/about" component={About} />
         <Route exact path="/support" component={Support} />
-        <Footer/>
+        <Footer />
       </div>
     );
   }

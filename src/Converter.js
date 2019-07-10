@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Result from "./Result";
-import { getResult ,getFlags } from "./api";
+import { getResult, getFlags } from "./api";
 import "./Converter.css";
 
 
 class Converter extends Component {
   state = {
-    invert:false,
+    invert: false,
     formData: {
       //to get user input
       from: "",
@@ -22,7 +22,7 @@ class Converter extends Component {
   handleChange = event => {
     console.log("change");
     // get the users input
-    
+
     const userInput = event.target.value;
     // get which input they typed in
     const inputName = event.target.name;
@@ -37,61 +37,61 @@ class Converter extends Component {
   handleSubmit = event => {
     // prevent default action
     event.preventDefault();
-    
-    let from = this.state.formData.from ;
+
+    let from = this.state.formData.from;
     let to = this.state.formData.to;
-    if(this.state.invert){
-      let temp="";
-      temp=from;
-      from=to;
-      to=temp;
+    if (this.state.invert) {
+      let temp = "";
+      temp = from;
+      from = to;
+      to = temp;
       this.setState({
-        invert:false,
+        invert: false,
       })
-    
+
 
     }
-    
+
     console.log(from);
     console.log(to);
 
     axios({
       method: "get",
       url: `https://free.currconv.com/api/v7/convert?q=${from}_${to}&compact=ultra&apiKey=c88d0484f970be819447`
-     
+
     })
 
     getResult(from, to)
-    .then(response => {
-      const rate = `${from}_${to}`; //get the rate from api
-      this.setState({
-        formData: {
-          from: from,
-          to: to,
-          amount: this.state.formData.amount,
-          rate: response.data[rate],
-          result: response.data[rate] * this.state.formData.amount,
-          toResult: true
-        }
-      });
-    })
+      .then(response => {
+        const rate = `${from}_${to}`; //get the rate from api
+        this.setState({
+          formData: {
+            from: from,
+            to: to,
+            amount: this.state.formData.amount,
+            rate: response.data[rate],
+            result: response.data[rate] * this.state.formData.amount,
+            toResult: true
+          }
+        });
+      })
   }
-  swapOptions=()=>{
+  swapOptions = () => {
     this.setState({
-      invert:true,
-      
+      invert: true,
+
     })
 
-  
-  
+
+
   }
 
   render() {
-    
-     
+
+
     return (
       <div className="currancyForm">
-       
+
         <form onSubmit={this.handleSubmit}>
           <label> Amount </label>
           <input
@@ -107,20 +107,20 @@ class Converter extends Component {
             className="select-items"
             onChange={this.handleChange}
             name="from"
-            
+
           >
-          
-          <option value="">- Convert from -</option>
+
+            <option value="">- Convert from -</option>
 
             {this.props.currencies.map(currency => (
               <option name='from' key={currency.id} value={currency.id} >
-                {currency.id} - {currency.currencyName}  
+                {currency.id} - {currency.currencyName}
               </option>
 
             ))}
-            {this.state.invert?<option selected >{this.state.formData.to}</option>:""}
-          </select> 
-           <button className="submitButton" id="invert"  onClick={this.swapOptions}> {"<>"} </button>
+            {this.state.invert ? <option selected >{this.state.formData.to}</option> : ""}
+          </select>
+          <button className="submitButton" id="invert" onClick={this.swapOptions}> {"<>"} </button>
           {/* <label> To </label> */}
           <select
             className="select-items"
@@ -133,7 +133,7 @@ class Converter extends Component {
                 {currency.id} - {currency.currencyName}
               </option>
             ))}
-            {this.state.invert?<option selected >{this.state.formData.from}</option>:""}
+            {this.state.invert ? <option selected >{this.state.formData.from}</option> : ""}
           </select>
           {/* {console.log(t.options[t.selectedIndex].text)} */}
           <button className="submitButton" type="submit">
@@ -151,8 +151,8 @@ class Converter extends Component {
             rate={this.state.formData.rate}
           />
         ) : (
-          ""
-        )}
+            ""
+          )}
       </div>
     );
   }
