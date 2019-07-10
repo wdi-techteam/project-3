@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
+
 .result{
-margin-left:30%; 
+/* margin-left:30%;  */
+margin-right:15%;
+text-align: center;
 margin-top:30px; 
+font-family: 'Russo One', sans-serif;
+text-shadow: 2px 2px gray;
+
+
 }
 #rate {
-margin-left:33%; 
+    margin-right:15%;
+    text-align: center; 
 margin-top:30px; 
 }
 th , td{
@@ -28,7 +37,9 @@ border-bottom:1px solid black;
 }
 .center{
     text-align: center;
-    margin-right:15%
+    margin-right:15%;
+    font-family: 'Russo One', sans-serif;
+    text-shadow: 2px 2px gray;
     /* margin-left:30%; 
     margin-top:30px; */
 }

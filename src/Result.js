@@ -29,7 +29,7 @@ class Result extends Component {
       <React.Fragment>
 
         <h2 className='result'>
-          {this.props.amount} {this.props.from} = {this.props.output}{" "} {this.props.to}
+          {this.props.amount} {this.props.from} = {this.props.output.toFixed(3)}{" "} {this.props.to}
         </h2>
         <p id='rate'> 1 {this.props.from}  = {this.props.rate} {this.props.to} </p>
 
