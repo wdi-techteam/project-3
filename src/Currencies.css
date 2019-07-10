@@ -1,6 +1,11 @@
 .currencies {
   text-align: center;
 }
+.currencies h1{
+  color: aliceblue;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
 
 * {
   box-sizing: border-box;
@@ -42,6 +47,7 @@
   border-radius: 5px;
   padding: 2px 16px;
   text-align: center;
+  background-image: url(https://oluroyle.com/content/images/system/home_cover_1562322510751_5bec60.jpg); opacity: 0.7;
 }
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);

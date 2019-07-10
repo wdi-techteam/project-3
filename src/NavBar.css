@@ -5,8 +5,8 @@
 .Home {
   background-color: lightsteelblue;
 }
-a:link,
-a:visited {
+nav a:link,
+nav a:visited {
   background-color: lightsteelblue;
   color: darkcyan;
   padding: 14px 25px;
@@ -15,8 +15,8 @@ a:visited {
   display: inline-block;
 }
 
-a:hover,
-a:active {
+nav a:hover,
+nav a:active {
   background-color: lightblue;
 }
 .Cal {
