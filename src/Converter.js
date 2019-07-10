@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Result from "./Result";
-import { getResult } from "./api";
+import { getResult ,getFlags } from "./api";
 import "./Converter.css";
+
 
 class Converter extends Component {
   state = {
@@ -21,6 +22,7 @@ class Converter extends Component {
   handleChange = event => {
     console.log("change");
     // get the users input
+    
     const userInput = event.target.value;
     // get which input they typed in
     const inputName = event.target.name;
@@ -43,6 +45,9 @@ class Converter extends Component {
       temp=from;
       from=to;
       to=temp;
+      this.setState({
+        invert:false,
+      })
     
 
     }
@@ -71,15 +76,22 @@ class Converter extends Component {
       });
     })
   }
-  invertOption=()=>{
+  swapOptions=()=>{
     this.setState({
       invert:true,
+      
     })
+
+  
+  
   }
 
   render() {
+    
+     
     return (
       <div className="currancyForm">
+       
         <form onSubmit={this.handleSubmit}>
           <label> Amount </label>
           <input
@@ -91,20 +103,24 @@ class Converter extends Component {
             onChange={this.handleChange}
           />
           {/* <label> From </label> */}
-          <select
+          <select id="idF"
             className="select-items"
             onChange={this.handleChange}
             name="from"
+            
           >
-            <option value="">- Convert from -</option>
+          
+          <option value="">- Convert from -</option>
 
             {this.props.currencies.map(currency => (
               <option name='from' key={currency.id} value={currency.id} >
-                {currency.id} - {currency.currencyName}
+                {currency.id} - {currency.currencyName}  
               </option>
+
             ))}
+            {this.state.invert?<option selected >{this.state.formData.to}</option>:""}
           </select> 
-           <button className="submitButton" id="invert"  onClick={this.invertOption}> {"<>"} </button>
+           <button className="submitButton" id="invert"  onClick={this.swapOptions}> {"<>"} </button>
           {/* <label> To </label> */}
           <select
             className="select-items"
@@ -117,7 +133,9 @@ class Converter extends Component {
                 {currency.id} - {currency.currencyName}
               </option>
             ))}
+            {this.state.invert?<option selected >{this.state.formData.from}</option>:""}
           </select>
+          {/* {console.log(t.options[t.selectedIndex].text)} */}
           <button className="submitButton" type="submit">
             {" "}
             >{" "}
