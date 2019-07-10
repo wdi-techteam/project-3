@@ -9,7 +9,7 @@ class Result extends Component {
   componentDidMount() {
     axios({
       method: "get",
-      url: `https://apilayer.net/api/live?access_key=2d6e17532c89b2561cff864a5c13579a&currencies=${this.props.from},${this.props.to},EUR,GBP,CAD,AUD,SAR,AED&source=USD&format=1`
+      url: `http://apilayer.net/api/live?access_key=2d6e17532c89b2561cff864a5c13579a&currencies=${this.props.from},${this.props.to},EUR,GBP,CAD,AUD,SAR,AED&source=USD&format=1`
     })
       .then(response => {
 
