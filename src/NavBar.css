@@ -3,11 +3,11 @@
 }
 
 .Home {
-  background-color: black;
+  background-color: lightsteelblue;
 }
-a:link,
-a:visited {
-  background-color: black;
+nav a:link,
+nav a:visited {
+  background-color: lightsteelblue;
   color: darkcyan;
   padding: 14px 25px;
   text-align: center;
@@ -15,8 +15,8 @@ a:visited {
   display: inline-block;
 }
 
-a:hover,
-a:active {
+nav a:hover,
+nav a:active {
   background-color: lightblue;
 }
 .Cal {
@@ -24,6 +24,6 @@ a:active {
   text-align: right;
   margin-left: 55%;
   margin-right: 1%;
-  color: white;
+  color: darkblue;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
