@@ -4,8 +4,6 @@ export const getResult = (from, to) => {
   return axios({
     method: "get",
     url: `https://free.currconv.com/api/v7/convert?q=${from}_${to}&compact=ultra&apiKey=c88d0484f970be819447`
-    // "https://free.currconv.com/api/v7/convert?q=USD_PHP&compact=ultra&apiKey=de16d9c21e2609ca2315"
-    // 'https://free.currconv.com/api/v7/currencies?apiKey=80017b5a4cbbbc532a33'
     // amany's key= de16d9c21e2609ca2315
     // wijdan's key= 80017b5a4cbbbc532a33
     // maha's key= c88d0484f970be819447
@@ -13,16 +11,11 @@ export const getResult = (from, to) => {
   });
 };
 
+
 export const getFlags = (currency) => {
-   axios({
+  return axios({
     method: "get",
     url: `https://restcountries.eu/rest/v2/currency/${currency}`
-    // amany's key= de16d9c21e2609ca2315
-    // wijdan's key= 80017b5a4cbbbc532a33
-    // maha's key= c88d0484f970be819447
-    // taha's Key= 25b9fc364d1f0bdff9c3
   })
-  .then(response =>{
-       return console.log(response.data[0].flag)
-  })
+
 };
