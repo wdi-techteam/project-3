@@ -4,16 +4,10 @@ body{
     font-family: 'DM Serif Text', serif; 
    /* background-color: black; */
    background-image:url(texture.jpg);
-   /* background-size:cover;   */
-    
-
  }
 
 footer{
     margin-top: 5%;
-    /* position: fixed;
-    left: 0;
-    bottom: 0; */
     width: 100%;
     text-align: center;
     color:white;
@@ -24,9 +18,10 @@ span{color:goldenrod;
 font-weight: bold;}
 
 .about{
-    font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 5%;
-    margin-top: 5%;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 2%;
+    margin-top: 2%;
     text-align: center;
     color: aliceblue;
     
@@ -35,9 +30,14 @@ font-weight: bold;}
 .this-app{
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: lightcyan ; opacity: 0.7; padding-top: 50px; padding-right: 30px; padding-left: 30px; padding-bottom: 50px;
+    background-color: lightcyan ; 
+    opacity: 0.7; 
+    padding-top: 40px; 
+    padding-right: 30px; 
+    padding-left: 30px; 
+    padding-bottom: 40px;
     border-radius: 25px;
-    font-size: 25px;
+    font-size: 22px;
     margin-left: 30%;
     margin-right: 30%;
     
@@ -45,9 +45,13 @@ font-weight: bold;}
 .we{
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: lightcyan ; opacity: 0.7; padding-top: 50px; padding-right: 30px; padding-left: 30px; padding-bottom: 50px;
+    background-color: lightcyan ; 
+    opacity: 0.7; 
+    padding-top: 30px; 
+    padding-right: 30px; 
+    padding-left: 30px;
+    padding-bottom: 10px;
     border-radius: 25px;
-    font-size: 25px;
     margin-left: 30%;
     margin-right: 30%;
     font-size: 22px;

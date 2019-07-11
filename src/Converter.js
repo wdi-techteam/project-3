@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import axios from "axios";
+// import axios from "axios";
 import Result from "./Result";
-import { getResult, getFlags } from "./api";
+import { getResult } from "./api";
 import "./Converter.css";
 
 
@@ -52,14 +52,7 @@ class Converter extends Component {
 
     }
 
-    console.log(from);
-    console.log(to);
 
-    axios({
-      method: "get",
-      url: `https://free.currconv.com/api/v7/convert?q=${from}_${to}&compact=ultra&apiKey=c88d0484f970be819447`
-
-    })
 
     getResult(from, to)
       .then(response => {
@@ -79,19 +72,11 @@ class Converter extends Component {
   swapOptions = () => {
     this.setState({
       invert: true,
-
     })
-
-
-
   }
-
   render() {
-
-
     return (
       <div className="currancyForm">
-
         <form onSubmit={this.handleSubmit}>
           <label> Amount </label>
           <input
@@ -107,11 +92,8 @@ class Converter extends Component {
             className="select-items"
             onChange={this.handleChange}
             name="from"
-
           >
-
             <option value="">- Convert from -</option>
-
             {this.props.currencies.map(currency => (
               <option name='from' key={currency.id} value={currency.id} >
                 {currency.id} - {currency.currencyName}
